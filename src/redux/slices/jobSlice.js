@@ -35,5 +35,5 @@ const jobSlice = createSlice({
 })
 
 
-export const { setLoading, setError, setJobs, deleteJob } = jobSlice.actions
+export const { setLoading, setError, setJobs, deleteJob, createJob } = jobSlice.actions
 export default jobSlice.reducer

@@ -4,8 +4,14 @@ import Select from './Select'
 import { statusOptions, typeOptions } from '../../utils/constant'
 import api from "../../utils/api"
 import { toast } from 'react-toastify'
+import { useDispatch } from 'react-redux'
+import { createJob } from '../../redux/slices/jobSlice'
+import { useNavigate } from 'react-router-dom'
 
 const Create = () => {
+
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -16,15 +22,17 @@ const Create = () => {
 
 
 
-        api.post("/jobs"
+        api.post("/jobs", jobData)
             .then(() => {
+                dispatch(createJob(jobData))
                 toast.success('Başvuru Oluşturuldu')
+                navigate("/")
             })
             .catch((err) => {
                 console.log(err)
                 toast.error("Başvuru Oluşturulamadı!!")
             })
-        )
+
     }
 
 
