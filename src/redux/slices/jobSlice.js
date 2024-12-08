@@ -27,7 +27,10 @@ const jobSlice = createSlice({
         deleteJob: (state, action) => {
             const i = state.jobs.findIndex(i => i.id == action.payload);
             state.jobs.splice(i, 1)
-        }
+        },
+        createJob: (state, action) => {
+            state.jobs.push(action.payload)
+        },
     }
 })
 
