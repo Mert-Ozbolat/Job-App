@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Select = ({ label, name, options }) => {
+const Select = ({ label, name, options, handleChange }) => {
     return (
         <div>
             <label htmlFor={name}>{label}</label>
 
-            <select name={name} id={name}>
+            <select name={name} id={name} onChange={handleChange}>
                 <option value="">Seçiniz</option>
                 {
                     options.map((i) => (

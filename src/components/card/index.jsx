@@ -1,4 +1,4 @@
-import 'card.scss'
+import './card.scss';
 import { FaCalendar, FaSuitcase } from 'react-icons/fa'
 import { MdLocationPin } from 'react-icons/md'
 import DelButton from './DelButton'

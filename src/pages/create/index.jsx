@@ -24,7 +24,7 @@ const Create = () => {
 
         api.post("/jobs", jobData)
             .then(() => {
-                dispatch(createJob(jobData))
+                dispatch(createJob(res.data))
                 toast.success('Başvuru Oluşturuldu')
                 navigate("/")
             })
